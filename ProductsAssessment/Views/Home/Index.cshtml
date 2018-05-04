@@ -1,0 +1,28 @@
+﻿@using ProductsAssessment.Models
+@model IEnumerable<ProductsAssessment.Models.ProductsPO>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2 align="center">Products</h2>
+<table id="Products">
+    <tr>
+        <th>Product Name</th>
+        <th>Quanity</th>
+        <th>Unit Price</th>
+        <th>Units in stock</th>
+        <th>Units on order</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductName</td>
+            <td>@item.ProductQuanity</td>
+            <td>@item.UnitPrice.ToString(" $##.00")</td>
+            <td>@item.UnitsInStock</td>
+            <td>@item.UnitsOnOrder</td>
+        </tr>
+    }
+</table>
